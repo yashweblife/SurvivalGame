@@ -1,0 +1,17 @@
+.display-off{
+  display:none;
+}
+.display-block{
+  opacity: 0.3;
+}
+button{
+  aspect-ratio: 1/1;
+  background-color: rgb(255, 186, 112);
+  border-radius: 50%;
+  border:none;
+  box-shadow: 0 0 1em 0 rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+button:hover{
+  background-color: rgb(255, 168, 74);
+}
