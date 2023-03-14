@@ -15,10 +15,31 @@ export const makes = {
 }
 
 // const game = ()=>{}
-var currentPage = "main-page"
-document.querySelector("#shelter-button")?.addEventListener("click",()=>{
-  document.querySelector("#shelter-page")?.classList.toggle("display-off");
-})
-document.querySelector("#return-button")?.addEventListener("click",()=>{
-  document.querySelector("#main-page")?.classList.toggle("display-off");
-})
+var pages = [
+  "main",
+  "shelter",
+  "water",
+  "fire",
+  "traps",
+  "foraging",
+  "hunting",
+  "learning",
+  "inventory",
+  "crafting",
+  "map",
+  "traps",
+  "foraging",
+  "hunting",
+  
+]
+var currentPage = "main"
+
+for(let i=0;i<pages.length;i++){
+  document.querySelector("#"+pages[i]+"-button")?.addEventListener("click",()=>{
+    if(currentPage == pages[i]) return;
+    document.querySelector("#"+currentPage+"-page")?.classList.add("display-off");
+    console.log(currentPage)
+    currentPage = pages[i];
+    document.querySelector("#"+currentPage+"-page")?.classList.remove("display-off");
+  })
+}
